@@ -5,7 +5,7 @@ import path from 'path'
 // mock插件
 import { viteMockServe } from 'vite-plugin-mock'
 
-export default defineConfig(({command}) => {
+export default defineConfig(({ command }) => {
   return {
     plugins: [
       vue(),

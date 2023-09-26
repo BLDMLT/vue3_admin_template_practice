@@ -12,20 +12,20 @@ export interface loginResponseData {
   data: dataType
 }
 // 服务器返回用户信息类型
-interface user  {
+interface user {
   checkUser: {
-    userId: number,
-    avatar: string,
-    username: string,
-    password: string,
-    desc: string,
-    roles: string[],
-    buttons: string[],
-    routes: string[],
+    userId: number
+    avatar: string
+    username: string
+    password: string
+    desc: string
+    roles: string[]
+    buttons: string[]
+    routes: string[]
     token: string
   }
 }
 export interface userResponseData {
-  code: number,
+  code: number
   data: user
 }
