@@ -1,22 +1,20 @@
 <template>
   <div>
-    <h1>App Root</h1>
+    <el-button type="primary" size="default" :icon="Plus" @click="">主要按钮</el-button>
+    <h1>111</h1>
   </div>
+  <Test></Test>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { Plus } from '@element-plus/icons-vue'
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+</script>
+
+<style scoped lang="scss">
+ h1 {
+  color: $color;
+ }
+
 </style>
