@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 import type { loginForm, loginResponseData, userResponseData } from './type'
-// 统一接口
+// 统一接口 枚举（enum）
 enum API {
   LOGIN_URL = '/user/login',
   USERINFO_URL = '/user/info',

@@ -43,4 +43,5 @@ request.interceptors.response.use(
     return Promise.reject(error)
   },
 )
+// 对外暴露的 export
 export default request

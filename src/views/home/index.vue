@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>router lv1 used for login succeed</h1>
+    <h1>This is home router lv1</h1>
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
