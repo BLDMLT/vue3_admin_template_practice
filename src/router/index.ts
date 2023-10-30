@@ -1,5 +1,9 @@
 // using vue-router
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from 'vue-router'
 import { constantRoute } from './routes'
 
 let router = createRouter({
@@ -10,9 +14,9 @@ let router = createRouter({
   scrollBehavior() {
     return {
       left: 0,
-      top: 0
+      top: 0,
     }
-  }
+  },
 })
 
 export default router

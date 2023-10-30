@@ -26,7 +26,7 @@ let useUserStore = defineStore('User', {
       if (result.code === 200) {
         this.token = result.data.token as string
         // 本地持久化存储
-        SET_TOKEN((result.data.token as string))
+        SET_TOKEN(result.data.token as string)
         // 返回成功
         return 'ok'
       } else {

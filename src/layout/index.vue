@@ -35,7 +35,7 @@ import Logo from './logo/index.vue'
     height: $base-tabbar-height;
     background: wheat;
   }
-  .layout_main{
+  .layout_main {
     position: absolute;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-tabbar-height);
