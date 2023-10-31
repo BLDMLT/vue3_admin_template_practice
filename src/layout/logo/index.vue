@@ -1,9 +1,29 @@
 <template>
-  <div>
-    <img src="../../../public/logo.png" alt="logo" />
+  <div class="logo" v-if="setting.logoHidden">
+    <img :src="setting.logo" alt="logo" />
+    <p>{{setting.title}}</p>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import setting from '@/setting'
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo{
+  width: 100%;
+  height: $base-menu-logo-height;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  p{
+    padding-left: 10px;
+    font-size: $base-menu-title-fontSize;
+  }
+}
+</style>
