@@ -7,7 +7,7 @@ export const constantRoute = [
     name: 'login', // 命名路由
     meta: {
       title: '登录', // 菜单标题
-    }
+    },
   },
   {
     // 登录后展示
@@ -15,24 +15,24 @@ export const constantRoute = [
     component: () => import('@/layout/index.vue'),
     name: 'layout', // 命名路由
     meta: {
-      title: 'layout', 
+      title: 'layout',
     },
-    children:[
+    children: [
       {
         path: '/home',
-        component:() => import('@/views/home/index.vue'),
+        component: () => import('@/views/home/index.vue'),
         meta: {
           title: '首页',
-        }
+        },
       },
       {
         path: '/ceshi',
-        component:() => import('@/views/home/index.vue'),
+        component: () => import('@/views/home/index.vue'),
         meta: {
           title: '测试',
-        }
-      }
-    ]
+        },
+      },
+    ],
   },
   {
     // 登录后展示
@@ -41,7 +41,7 @@ export const constantRoute = [
     name: '404', // 命名路由
     meta: {
       title: '404', // 菜单标题
-    }
+    },
   },
   {
     // 登录
@@ -50,6 +50,6 @@ export const constantRoute = [
     name: 'Any', // 命名路由
     meta: {
       title: 'Any', // 菜单标题
-    }
+    },
   },
 ]

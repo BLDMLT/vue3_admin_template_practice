@@ -1,7 +1,7 @@
 <template>
   <div class="logo" v-if="setting.logoHidden">
     <img :src="setting.logo" alt="logo" />
-    <p>{{setting.title}}</p>
+    <p>{{ setting.title }}</p>
   </div>
 </template>
 
@@ -10,18 +10,18 @@ import setting from '@/setting'
 </script>
 
 <style lang="scss" scoped>
-.logo{
+.logo {
   width: 100%;
   height: $base-menu-logo-height;
   color: white;
   display: flex;
   align-items: center;
   padding: 20px;
-  img{
+  img {
     width: 40px;
     height: 40px;
   }
-  p{
+  p {
     padding-left: 10px;
     font-size: $base-menu-title-fontSize;
   }
