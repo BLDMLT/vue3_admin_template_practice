@@ -9,7 +9,7 @@ export const constantRoute = [
     meta: {
       title: '登录', // 菜单标题
       hidden: true, // 隐藏标题
-      icon: 'Promotion'
+      icon: 'Promotion',
     },
   },
   // / home
@@ -20,8 +20,8 @@ export const constantRoute = [
     name: 'layout', // 命名路由
     meta: {
       title: 'layout',
-      hidden:false,
-      icon: 'Avatar'
+      hidden: false,
+      icon: 'Avatar',
     },
     redirect: '/home',
     children: [
@@ -31,9 +31,9 @@ export const constantRoute = [
         meta: {
           title: '首页',
           hidden: false,
-          icon: 'HomeFilled'
+          icon: 'HomeFilled',
         },
-      }
+      },
     ],
   },
   {
@@ -44,7 +44,7 @@ export const constantRoute = [
     meta: {
       title: '数据大屏', // 菜单标题
       hidden: false, // 隐藏标题
-      icon: 'DataBoard'
+      icon: 'DataBoard',
     },
   },
   // 404
@@ -56,7 +56,7 @@ export const constantRoute = [
     meta: {
       title: '404', // 菜单标题
       hidden: true, // 隐藏标题
-      icon: 'HomeFilled'
+      icon: 'HomeFilled',
     },
   },
   // any
@@ -68,7 +68,7 @@ export const constantRoute = [
     meta: {
       title: 'Any', // 菜单标题
       hidden: true, // 隐藏标题
-      icon: 'HomeFilled'
+      icon: 'HomeFilled',
     },
   },
 ]

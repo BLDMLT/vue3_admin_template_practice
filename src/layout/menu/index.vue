@@ -55,9 +55,7 @@
 //获取父组件传递数据
 defineProps(['menuList'])
 // 点击菜单回调
-const goRoute = () => {
-  
-}
+const goRoute = () => {}
 </script>
 <script lang="ts">
 //获取父组件传递数据
