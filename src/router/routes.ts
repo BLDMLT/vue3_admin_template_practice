@@ -1,5 +1,6 @@
 // 对外暴露的路由 (常量路由)
 export const constantRoute = [
+  // /login
   {
     // 登录
     path: '/login',
@@ -7,8 +8,11 @@ export const constantRoute = [
     name: 'login', // 命名路由
     meta: {
       title: '登录', // 菜单标题
+      hidden: true, // 隐藏标题
+      icon: 'Promotion'
     },
   },
+  // / home
   {
     // 登录后展示
     path: '/',
@@ -16,24 +20,34 @@ export const constantRoute = [
     name: 'layout', // 命名路由
     meta: {
       title: 'layout',
+      hidden:false,
+      icon: 'Avatar'
     },
+    redirect: '/home',
     children: [
       {
         path: '/home',
         component: () => import('@/views/home/index.vue'),
         meta: {
           title: '首页',
+          hidden: false,
+          icon: 'HomeFilled'
         },
-      },
-      {
-        path: '/ceshi',
-        component: () => import('@/views/home/index.vue'),
-        meta: {
-          title: '测试',
-        },
-      },
+      }
     ],
   },
+  {
+    // 数据展示
+    path: '/screen',
+    component: () => import('@/views/screen/index.vue'),
+    name: 'Screen', // 命名路由
+    meta: {
+      title: '数据大屏', // 菜单标题
+      hidden: false, // 隐藏标题
+      icon: 'DataBoard'
+    },
+  },
+  // 404
   {
     // 登录后展示
     path: '/404',
@@ -41,8 +55,11 @@ export const constantRoute = [
     name: '404', // 命名路由
     meta: {
       title: '404', // 菜单标题
+      hidden: true, // 隐藏标题
+      icon: 'HomeFilled'
     },
   },
+  // any
   {
     // 登录
     path: '/:pathMatch(.*)*',
@@ -50,6 +67,8 @@ export const constantRoute = [
     name: 'Any', // 命名路由
     meta: {
       title: 'Any', // 菜单标题
+      hidden: true, // 隐藏标题
+      icon: 'HomeFilled'
     },
   },
 ]
