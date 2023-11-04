@@ -17,7 +17,7 @@ import Setting from './setting/index.vue'
 </script>
 <script lang="ts">
 export default {
-  name: "Tabbar"
+  name: 'Tabbar',
 }
 </script>
 
@@ -39,4 +39,5 @@ export default {
     align-items: center;
     margin: 0 10px;
   }
-}</style>
+}
+</style>

@@ -54,9 +54,9 @@ export const constantRoute = [
     component: () => import('@/layout/index.vue'),
     name: 'Acl',
     meta: {
-      title:'权限管理',
+      title: '权限管理',
       hidden: false,
-      icon: 'Lock'
+      icon: 'Lock',
     },
     children: [
       {
@@ -89,7 +89,7 @@ export const constantRoute = [
           icon: 'Monitor',
         },
       },
-    ]
+    ],
   },
   // 商品管理
   {
@@ -97,9 +97,9 @@ export const constantRoute = [
     component: () => import('@/layout/index.vue'),
     name: 'Product',
     meta: {
-      title:'商品管理',
+      title: '商品管理',
       hidden: false,
-      icon: 'Goods'
+      icon: 'Goods',
     },
     children: [
       {
@@ -142,7 +142,7 @@ export const constantRoute = [
           icon: 'IceDrink',
         },
       },
-    ]
+    ],
   },
   // 404
   {

@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 // 定义响应式图标控制
-let fold = ref(false); // 控制折叠
+let fold = ref(false) // 控制折叠
 // 点击图标方法
 const changeIcon = () => {
   fold.value = !fold.value
@@ -20,7 +20,7 @@ const changeIcon = () => {
 </script>
 <script lang="ts">
 export default {
-  name: "Breadcrumb"
+  name: 'Breadcrumb',
 }
 </script>
 <style scoped></style>

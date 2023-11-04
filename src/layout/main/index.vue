@@ -16,15 +16,14 @@
   /* 旋转 */
   /* transform: rotate(0deg);   */
   /* 逐渐放大（从中心点） */
-  transform: scale(0);  
+  transform: scale(0);
 }
 .fade-enter-active {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .fade-enter-to {
   opacity: 1;
   /* transform: rotate(360deg); */
-  transform: scale(1);  
+  transform: scale(1);
 }
-
 </style>

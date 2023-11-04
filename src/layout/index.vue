@@ -5,7 +5,12 @@
       <Logo></Logo>
       <!-- 菜单滚动条 -->
       <el-scrollbar class="scrollbar">
-        <el-menu unique-opened background-color="$base-menu-background" text-color="white" :default-active="$route.path" >
+        <el-menu
+          unique-opened
+          background-color="$base-menu-background"
+          text-color="white"
+          :default-active="$route.path"
+        >
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
@@ -36,14 +41,13 @@ import Tabbar from './tabbar/index.vue'
 import useUserStore from '@/store/modules/user'
 let userStore = useUserStore()
 
-
 //获取路由对象
-let $route = useRoute();
+let $route = useRoute()
 </script>
 
 <script lang="ts">
 export default {
-  name: "Layout"
+  name: 'Layout',
 }
 </script>
 

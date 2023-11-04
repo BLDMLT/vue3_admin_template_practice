@@ -63,7 +63,7 @@ const goRoute = (vc: any) => {
 <script lang="ts">
 //获取父组件传递数据
 export default {
-  name: 'Menu'
+  name: 'Menu',
 }
 </script>
 
