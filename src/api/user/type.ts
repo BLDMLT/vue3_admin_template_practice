@@ -29,4 +29,5 @@ interface user {
 export interface userResponseData {
   code: number
   data: user
+  message: string
 }

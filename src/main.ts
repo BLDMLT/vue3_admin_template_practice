@@ -28,5 +28,7 @@ app.use(globalComponent)
 app.use(pinia)
 // 注册路由
 app.use(router)
+// 路由鉴权的引入
+import './permission'
 // 将应用挂载到挂载点上
 app.mount('#app')

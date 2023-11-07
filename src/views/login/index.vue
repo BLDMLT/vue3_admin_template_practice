@@ -46,7 +46,7 @@
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 // 获取时间函数
 import { getTime } from '@/utils/time'
@@ -55,6 +55,7 @@ import useUserStore from '@/store/modules/user'
 
 let useStore = useUserStore()
 let $router = useRouter()
+let $route = useRoute();
 // 控制按钮加载
 let loading = ref(false)
 // 获取form
@@ -73,7 +74,9 @@ const login = async () => {
   try {
     // 保证登录成功
     await useStore.userLogin(loginForm)
-    $router.push('/')
+    // 判断路径是否有query 有-> 跳query，没有-> 跳home
+    let redirect: any = $route.query.redirect;
+    $router.push({ path: redirect || '/' });
     ElNotification({
       type: 'success',
       message: '欢迎回来',

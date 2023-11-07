@@ -12,7 +12,7 @@
           <component :is="item.meta.icon"></component>
         </el-icon>
         <template #title>
-          <span>{{ item.meta.title }}</span>
+          <span class="menu-title">{{ item.meta.title }}</span>
         </template>
       </el-menu-item>
     </template>
@@ -27,7 +27,7 @@
           <component :is="item.children[0].meta.icon"></component>
         </el-icon>
         <template #title>
-          <span>{{ item.children[0].meta.title }}</span>
+          <span class="menu-title">{{ item.children[0].meta.title }}</span>
         </template>
       </el-menu-item>
     </template>
@@ -40,7 +40,7 @@
         <el-icon>
           <component :is="item.meta.icon"></component>
         </el-icon>
-        <span>{{ item.meta.title }}</span>
+        <span class="menu-title">{{ item.meta.title }}</span>
       </template>
       <Menu :menuList="item.children"></Menu>
     </el-sub-menu>
@@ -56,7 +56,6 @@ let $router = useRouter()
 // 点击菜单回调
 const goRoute = (vc: any) => {
   // 路由跳转
-  console.log(vc.index)
   $router.push(vc.index)
 }
 </script>
@@ -67,4 +66,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.menu-title {
+  padding: 0px 10px;
+}
+</style>
