@@ -11,8 +11,8 @@ let request = axios.create({
 //请求拦截器
 request.interceptors.request.use((config) => {
   // config配置对象，headers属性请求头，公共参数，加进度条
-  let userStore = useUserStore();
-  if(userStore.token){
+  let userStore = useUserStore()
+  if (userStore.token) {
     config.headers.token = userStore.token
   }
   return config

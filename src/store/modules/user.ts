@@ -17,7 +17,7 @@ let useUserStore = defineStore('User', {
       token: GET_TOKEN(), // 用户标识
       menuRoutes: constantRoute, // 菜单生成需要的数组（路由）
       username: '',
-      avatar: ''
+      avatar: '',
     }
   },
   //异步 | 逻辑
@@ -39,24 +39,24 @@ let useUserStore = defineStore('User', {
       }
     },
     // 获取用户信息
-    async userInfo () {
-      const result = await reqUserInfo();
-      if(result.code === 200){
-        this.username = result.data.checkUser.username;
-        this.avatar = result.data.checkUser.avatar;
-        return 'ok';
+    async userInfo() {
+      const result = await reqUserInfo()
+      if (result.code === 200) {
+        this.username = result.data.checkUser.username
+        this.avatar = result.data.checkUser.avatar
+        return 'ok'
       } else {
         return Promise.reject(new Error(result.message))
       }
     },
     // 退出登录
-    userLogout () {
+    userLogout() {
       // 通知服务器登录标识失效
-      this.token = '';
-      this.username = '';
-      this.avatar = '';
-      REMOVE_TOKEN();
-    }
+      this.token = ''
+      this.username = ''
+      this.avatar = ''
+      REMOVE_TOKEN()
+    },
   },
   //
   getters: {},

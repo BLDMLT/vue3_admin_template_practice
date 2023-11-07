@@ -55,7 +55,7 @@ import useUserStore from '@/store/modules/user'
 
 let useStore = useUserStore()
 let $router = useRouter()
-let $route = useRoute();
+let $route = useRoute()
 // 控制按钮加载
 let loading = ref(false)
 // 获取form
@@ -75,8 +75,8 @@ const login = async () => {
     // 保证登录成功
     await useStore.userLogin(loginForm)
     // 判断路径是否有query 有-> 跳query，没有-> 跳home
-    let redirect: any = $route.query.redirect;
-    $router.push({ path: redirect || '/' });
+    let redirect: any = $route.query.redirect
+    $router.push({ path: redirect || '/' })
     ElNotification({
       type: 'success',
       message: '欢迎回来',

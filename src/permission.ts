@@ -4,7 +4,7 @@ import setting from '@/setting'
 import NProgress from 'nprogress'
 // 引入进度条样式
 import 'nprogress/nprogress.css'
-NProgress.configure({ showSpinner: false });
+NProgress.configure({ showSpinner: false })
 // 获取仓库数据
 import useUserStore from '@/store/modules/user'
 import pinia from './store'
@@ -28,13 +28,13 @@ router.beforeEach(async (to: any, from: any, next: any) => {
         next()
       } else {
         try {
-          await userStore.userInfo();
-          next();
+          await userStore.userInfo()
+          next()
         } catch (error) {
           // token 过期，
           // 用户手动修改cache
-          userStore.userLogout();
-          next({path: '/login', query: {redirect: to.path}})
+          userStore.userLogout()
+          next({ path: '/login', query: { redirect: to.path } })
         }
       }
     }
