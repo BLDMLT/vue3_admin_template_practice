@@ -14,5 +14,4 @@ export const reqLogin = (data: loginForm) =>
 export const reqUserInfo = () =>
   request.get<any, userInfoResponseData>(API.USERINFO_URL)
 // Logout，token在请求头中
-export const reqLogout = () =>
-  request.post<any, any>(API.LOGOUT_URL)
+export const reqLogout = () => request.post<any, any>(API.LOGOUT_URL)

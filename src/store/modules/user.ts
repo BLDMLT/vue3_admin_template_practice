@@ -3,7 +3,11 @@ import { defineStore } from 'pinia'
 // 引入接口
 import { reqLogin, reqLogout, reqUserInfo } from '@/api/user'
 // 引入类型
-import type { loginForm, loginResponseData, userInfoResponseData } from '@/api/user/type'
+import type {
+  loginForm,
+  loginResponseData,
+  userInfoResponseData,
+} from '@/api/user/type'
 import type { UserState } from './types/type'
 // 引入本地存储的工具方法
 import { GET_TOKEN, SET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
@@ -54,7 +58,7 @@ let useUserStore = defineStore('User', {
     async userLogout() {
       const result: any = await reqLogout()
       if (result.code === 200) {
-         // 通知服务器登录标识失效
+        // 通知服务器登录标识失效
         this.token = ''
         this.username = ''
         this.avatar = ''
@@ -62,7 +66,7 @@ let useUserStore = defineStore('User', {
         return 'ok'
       } else {
         return Promise.reject(new Error(result.message))
-      }  
+      }
     },
   },
   //

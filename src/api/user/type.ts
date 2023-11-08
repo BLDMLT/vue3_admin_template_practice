@@ -21,10 +21,10 @@ export interface loginResponseData extends ResponseData {
 // info接口返回ts类型
 export interface userInfoResponseData extends ResponseData {
   data: {
-    routes: string[],
-    buttons: string[],
-    roles: string[],
-    name: string,
+    routes: string[]
+    buttons: string[]
+    roles: string[]
+    name: string
     avatar: string
   }
 }
