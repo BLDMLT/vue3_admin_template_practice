@@ -1,9 +1,9 @@
 // 用户相关的小仓库
 import { defineStore } from 'pinia'
 // 引入接口
-import { reqLogin, reqUserInfo } from '@/api/user'
+import { reqLogin, reqLogout, reqUserInfo } from '@/api/user'
 // 引入类型
-import type { loginForm, loginResponseData } from '@/api/user/type'
+import type { loginForm, loginResponseData, userInfoResponseData } from '@/api/user/type'
 import type { UserState } from './types/type'
 // 引入本地存储的工具方法
 import { GET_TOKEN, SET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
@@ -29,33 +29,40 @@ let useUserStore = defineStore('User', {
       //成功=> 200
       // 失败=> 201
       if (result.code === 200) {
-        this.token = result.data.token as string
+        console.log(result)
+        this.token = result.data as string
         // 本地持久化存储
-        SET_TOKEN(result.data.token as string)
+        SET_TOKEN(result.data as string)
         // 返回成功
         return 'ok'
       } else {
-        return Promise.reject(new Error(result.data.message))
+        return Promise.reject(new Error(result.data))
       }
     },
     // 获取用户信息
     async userInfo() {
-      const result = await reqUserInfo()
+      const result: userInfoResponseData = await reqUserInfo()
       if (result.code === 200) {
-        this.username = result.data.checkUser.username
-        this.avatar = result.data.checkUser.avatar
+        this.username = result.data.name
+        this.avatar = result.data.avatar
         return 'ok'
       } else {
         return Promise.reject(new Error(result.message))
       }
     },
     // 退出登录
-    userLogout() {
-      // 通知服务器登录标识失效
-      this.token = ''
-      this.username = ''
-      this.avatar = ''
-      REMOVE_TOKEN()
+    async userLogout() {
+      const result: any = await reqLogout()
+      if (result.code === 200) {
+         // 通知服务器登录标识失效
+        this.token = ''
+        this.username = ''
+        this.avatar = ''
+        REMOVE_TOKEN()
+        return 'ok'
+      } else {
+        return Promise.reject(new Error(result.message))
+      }  
     },
   },
   //

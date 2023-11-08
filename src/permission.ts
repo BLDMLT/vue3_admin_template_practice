@@ -33,7 +33,7 @@ router.beforeEach(async (to: any, from: any, next: any) => {
         } catch (error) {
           // token 过期，
           // 用户手动修改cache
-          userStore.userLogout()
+          await userStore.userLogout()
           next({ path: '/login', query: { redirect: to.path } })
         }
       }

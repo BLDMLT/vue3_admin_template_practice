@@ -61,7 +61,7 @@ let loading = ref(false)
 // 获取form
 let loginForms = ref()
 // 收集数据
-let loginForm = reactive({ username: 'admin', password: '111111' }) // 类似 useState, useReducer
+let loginForm = reactive({ username: 'admin', password: 'atguigu123' }) // 类似 useState, useReducer
 // 回调登录按钮
 const login = async () => {
   // 保证表单校验通过
