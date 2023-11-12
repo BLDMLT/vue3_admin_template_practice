@@ -2,10 +2,22 @@
   <div>
     <el-card class="box-card">
       <!-- 添加按钮 -->
-      <el-button type="primary" size="default" icon="Plus" @click="addTrademark">添加品牌</el-button>
+      <el-button
+        type="primary"
+        size="default"
+        icon="Plus"
+        @click="addTrademark"
+      >
+        添加品牌
+      </el-button>
       <!-- 表格组件 -->
       <el-table style="margin: 10px 0px" :data="trademarkArr" border>
-        <el-table-column label="序号" width="80px" align="center" type="index"></el-table-column>
+        <el-table-column
+          label="序号"
+          width="80px"
+          align="center"
+          type="index"
+        ></el-table-column>
         <el-table-column label="品牌名称" prop="tmName">
           <!-- element pluse 插槽 -->
           <template #="{ row, $index }">
@@ -14,30 +26,57 @@
         </el-table-column>
         <el-table-column label="品牌Logo">
           <template #="{ row, $index }">
-            <img :src="row.logoUrl" alt="" style="width: 100px; height: 100px" />
+            <img
+              :src="row.logoUrl"
+              alt=""
+              style="width: 100px; height: 100px"
+            />
           </template>
         </el-table-column>
         <el-table-column label="品牌操作">
           <template #="{ row, $index }">
-            <el-button type="primary" size="small" icon="Edit" title="Edit" @click="updateTrademark"></el-button>
-            <el-button type="primary" size="small" icon="Delete" title="Delete"></el-button>
+            <el-button
+              type="primary"
+              size="small"
+              icon="Edit"
+              title="Edit"
+              @click="updateTrademark"
+            ></el-button>
+            <el-button
+              type="primary"
+              size="small"
+              icon="Delete"
+              title="Delete"
+            ></el-button>
           </template>
         </el-table-column>
       </el-table>
       <!-- 分页 -->
-      <el-pagination @size-change="changePageNo" @current-change="getHasTrademark" v-model:current-page="pageNo"
-        v-model:page-size="limit" :page-sizes="[3, 5, 7, 9]" :background="true"
-        layout="prev, pager, next, jumper,->, sizes,total" :total="total" />
+      <el-pagination
+        @size-change="changePageNo"
+        @current-change="getHasTrademark"
+        v-model:current-page="pageNo"
+        v-model:page-size="limit"
+        :page-sizes="[3, 5, 7, 9]"
+        :background="true"
+        layout="prev, pager, next, jumper,->, sizes,total"
+        :total="total"
+      />
     </el-card>
     <!-- 对话框组件：用于添加和修改已有品牌 -->
     <el-dialog v-model="dialogFormVisible" title="添加品牌">
-      <el-form style="width: 80%;">
+      <el-form style="width: 80%">
         <el-form-item label="品牌名称" label-width="80px">
           <el-input placeholder="请您输入品牌名称" autocomplete="off" />
         </el-form-item>
         <el-form-item label="品牌Logo" label-width="80px">
-          <el-upload class="avatar-uploader" action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-            :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+          <el-upload
+            class="avatar-uploader"
+            action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
+            :show-file-list="false"
+            :on-success="handleAvatarSuccess"
+            :before-upload="beforeAvatarUpload"
+          >
             <img v-if="imageUrl" :src="imageUrl" class="avatar" />
             <el-icon v-else class="avatar-uploader-icon">
               <Plus />
@@ -105,17 +144,14 @@ const updateTrademark = () => {
 }
 // 对话框取消按钮回调
 const cancelDialog = () => {
-   // 对话框隐藏
-   dialogFormVisible.value = false
+  // 对话框隐藏
+  dialogFormVisible.value = false
 }
 // 对话框确定按钮回调
 const confirmDialog = () => {
-   // 对话框隐藏
-   dialogFormVisible.value = false
+  // 对话框隐藏
+  dialogFormVisible.value = false
 }
-
-
-
 
 // 辅助函数：添加协议前缀
 const addProtocolPrefix = (url: any) => {
