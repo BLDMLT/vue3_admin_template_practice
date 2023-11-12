@@ -40,6 +40,8 @@
     </el-table>
     <!-- 分页 -->
     <el-pagination
+      @size-change="changePageNo" 
+      @current-change="getHasTrademark"
       v-model:current-page="pageNo"
       v-model:page-size="limit"
       :page-sizes="[3, 5, 7, 9]"
@@ -68,14 +70,14 @@ let total = ref<number>(0)
 // 存储已有的品牌数据
 let trademarkArr = ref<Records>([])
 // 获取品牌接口，封装成函数
-const getHasTrademark = async () => {
+const getHasTrademark = async (pager = 1) => {
+  pageNo.value = pager;
   let result: TradeMarkResponseData = await reqHasTrademark(
     pageNo.value,
     limit.value,
   )
   if (result.code === 200) {
     //获取总个数
-
     total.value = result.data.total
     trademarkArr.value = result.data.records
     // 添加协议前缀到logoUrl
@@ -84,7 +86,6 @@ const getHasTrademark = async () => {
     })
   }
 }
-
 // 辅助函数：添加协议前缀
 const addProtocolPrefix = (url: any) => {
   if (!url.startsWith('http://') && !url.startsWith('https://')) {
@@ -92,7 +93,11 @@ const addProtocolPrefix = (url: any) => {
   }
   return url
 }
-console.log('trademarkArr', trademarkArr)
+// 分页器发生变化时触发
+const changePageNo = () => {
+  getHasTrademark();
+}
+
 // 组件挂载完毕钩子
 onMounted(() => {
   getHasTrademark()
