@@ -9,7 +9,6 @@ enum API {
   ADDTRADEMARK_URL = '/admin/product/baseTrademark/save',
   // 修改已有品牌
   UPDATETRADEMARK_URL = '/admin/product/baseTrademark/update',
-
 }
 // 获取已有品牌接口方法
 // page: 获取第几页 --  默认第一页
@@ -20,9 +19,9 @@ export const reqHasTrademark = (page: number, limit: number) =>
   )
 
 // 添加和修改已有品牌接口方法
-export const reqAddOrUpdateTradeMark = (data: TradeMark ) => {
+export const reqAddOrUpdateTradeMark = (data: TradeMark) => {
   // 修改已有品牌
-  if(data.id){
+  if (data.id) {
     // <any, any> 第二个为返回类型ts
     return request.put<any, any>(API.UPDATETRADEMARK_URL, data)
   } else {
