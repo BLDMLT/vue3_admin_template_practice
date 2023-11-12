@@ -40,7 +40,7 @@
     </el-table>
     <!-- 分页 -->
     <el-pagination
-      @size-change="changePageNo" 
+      @size-change="changePageNo"
       @current-change="getHasTrademark"
       v-model:current-page="pageNo"
       v-model:page-size="limit"
@@ -71,7 +71,7 @@ let total = ref<number>(0)
 let trademarkArr = ref<Records>([])
 // 获取品牌接口，封装成函数
 const getHasTrademark = async (pager = 1) => {
-  pageNo.value = pager;
+  pageNo.value = pager
   let result: TradeMarkResponseData = await reqHasTrademark(
     pageNo.value,
     limit.value,
@@ -95,7 +95,7 @@ const addProtocolPrefix = (url: any) => {
 }
 // 分页器发生变化时触发
 const changePageNo = () => {
-  getHasTrademark();
+  getHasTrademark()
 }
 
 // 组件挂载完毕钩子
